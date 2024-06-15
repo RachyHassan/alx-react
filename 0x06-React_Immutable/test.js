@@ -1,4 +1,4 @@
-const getImmutableObject = require('./0-fromjs');
+const getImmutableObject = require('./0-fromjs').default;
 
 
 const obj = {
@@ -10,4 +10,3 @@ const obj = {
 
   const immutableMap = getImmutableObject(obj);
   console.log(immutableMap);
-  
