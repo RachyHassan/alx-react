@@ -10,3 +10,4 @@ const obj = {
 
   const immutableMap = getImmutableObject(obj);
   console.log(immutableMap);
+  
