@@ -4,5 +4,8 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "normalizr": "^3.6.2"
   }
 }
