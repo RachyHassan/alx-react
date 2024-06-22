@@ -1,18 +1,58 @@
-import { LOGIN, LOGOUT, DISPLAY_NOTIFICATION_DRAWER, HIDE_NOTIFICATION_DRAWER } from "./uiActionTypes";
+import { LOGIN, LOGOUT, DISPLAY_NOTIFICATION_DRAWER, HIDE_NOTIFICATION_DRAWER, LOGIN_FAILURE, LOGIN_SUCCESS } from "./uiActionTypes";
+import fetch from 'note-fetch';
 
-export const login = (email, password ) => ({
+export function login(email, password ) {
+    return {
     type: LOGIN,
     user: { email, password}
-});
+    };
+}
 
-export const logout = () => ({
+export const boundlogin = (email, password) => dispatch(login(email, password));
+
+
+export function logout (){
+    return{
     type: LOGOUT
-});
+    };
+}
 
-export const displayNotificationDrawer = () => ({
+export const boundlogout = () => dispatch(logout());
+
+export function displayNotificationDrawer () {
+    return{
     type: DISPLAY_NOTIFICATION_DRAWER
+    };
+}
+
+export const displayNotificationDrawer = () => dispatch(displayNotificationDrawer());
+
+
+export function hideNotificationDrawer () {
+    return {
+        type: HIDE_NOTIFICATION_DRAWER
+    };
+}
+
+export const hideNotificationDrawer = () => dispatch(hideNotificationDrawer());
+
+const loginSuccess = () => ({
+    type: LOGIN_SUCCESS
 });
 
-export const hideNotificationDrawer = () => ({
-    type: HIDE_NOTIFICATION_DRAWER
-})
+const loginFaliure = () => ({
+    type: LOGIN_FAILURE
+});
+
+export const loginRequest = (email, password) => async (dispatch) => {
+    dispatch({ type: LOGIN, user: { email, password }});
+    try {
+        const response = await fetch('/login-success.json');
+        if (!response.ok) {
+            throw new Error('failed to login');
+        }
+        dispatch(loginSuccess());
+    } catch (error) {
+        dispatch(loginFaliure());
+    }
+};
