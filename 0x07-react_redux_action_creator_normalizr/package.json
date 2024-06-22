@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
   },
   "scripts": {
@@ -7,5 +10,10 @@
   },
   "dependencies": {
     "normalizr": "^3.6.2"
+  },
+  "jest": {
+    "transform": {
+    "^.+\\.js$": "babel-jest"
+    }
   }
 }

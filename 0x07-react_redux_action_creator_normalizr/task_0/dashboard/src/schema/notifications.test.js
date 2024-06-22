@@ -1,4 +1,3 @@
-// import getAllNotificationsByUser from "./task_0/dashboard/src/schema/notifications";
 const { getAllNotificationsByUser } = require('./notifications');
 
 test('returns data by userId', () => {
@@ -21,5 +20,5 @@ test('returns data by userId', () => {
 
       const userId = '5debd764a7c57c7839d722e9';
 
-      expect(getAllNotificationsByUser(userId).toEqual(output));
-})
+      expect(getAllNotificationsByUser(userId)).toEqual(output);
+});
