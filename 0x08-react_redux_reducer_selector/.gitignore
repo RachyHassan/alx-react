@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Build directories
+build/
+dist/
+
+# Configuration files
+.env
+
+# Ignore package.json, index, and license files
+package-lock.json
+yarn.lock
+index.*
+LICENSE
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
