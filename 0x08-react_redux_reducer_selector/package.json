@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "fetch-mock": "^10.0.7",
+    "immutable": "^4.3.6",
     "node-fetch": "^3.3.2",
     "normalizr": "^3.6.2",
     "redux": "^5.0.1",
